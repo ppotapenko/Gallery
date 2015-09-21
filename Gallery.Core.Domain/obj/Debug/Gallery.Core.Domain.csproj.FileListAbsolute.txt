@@ -1,0 +1,10 @@
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\bin\Debug\Gallery.Core.Domain.dll.config
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\bin\Debug\Gallery.Core.Domain.dll
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\bin\Debug\Gallery.Core.Domain.pdb
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\bin\Debug\EntityFramework.dll
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\bin\Debug\EntityFramework.xml
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\obj\Debug\Gallery.Core.Domain.dll
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\obj\Debug\Gallery.Core.Domain.pdb
+D:\Projects\ASP.NET\Gallery\Gallery.Core.Domain\obj\Debug\Gallery.Core.Domain.csprojResolveAssemblyReference.cache

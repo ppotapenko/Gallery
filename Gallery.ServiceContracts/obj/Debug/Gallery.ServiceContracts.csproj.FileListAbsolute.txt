@@ -1,0 +1,9 @@
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\bin\Debug\Gallery.ServiceContracts.dll
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\bin\Debug\Gallery.ServiceContracts.pdb
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\bin\Debug\Gallery.Core.Domain.dll
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\bin\Debug\PagedList.dll
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\bin\Debug\Gallery.Core.Domain.pdb
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\bin\Debug\PagedList.xml
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\obj\Debug\Gallery.ServiceContracts.csprojResolveAssemblyReference.cache
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\obj\Debug\Gallery.ServiceContracts.dll
+D:\Projects\ASP.NET\Gallery\Gallery.ServiceContracts\obj\Debug\Gallery.ServiceContracts.pdb

@@ -1,0 +1,31 @@
+﻿@model HandleErrorInfo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Title 
+{
+    Произошла ошибка
+}
+<div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <p class="lead">Произошла ошибка!</p>
+    <div>
+        <p>
+            <strong>Controller:</strong> @Model.ControllerName
+        </p>
+        <p>
+            <strong>Action:</strong> @Model.ActionName
+        </p>
+    </div>
+    <div>
+        <p>
+            <strong>Error Message:</strong> @Model.Exception.Message
+        </p>
+    </div>
+    <div>
+        <strong>EXCEPTION STACKTRACE:</strong>
+        <p>
+            @Html.Raw(Convert.ToString(Model.Exception.StackTrace))
+        </p>
+    </div>
+</div>

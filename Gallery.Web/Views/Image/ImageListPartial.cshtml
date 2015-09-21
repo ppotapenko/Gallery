@@ -1,0 +1,44 @@
+﻿@using Gallery.Core.Domain;
+@using Gallery.Core.Domain.SearchCriteria;
+@using Gallery.Helpers.Models;
+@using Gallery.WEB.Controllers
+@using Gallery.WEB.Extensions
+@using Gallery.WEB.Helpers
+
+@model IEnumerable<Image>
+
+@if (Model.Any())
+{
+    var i = 0;
+    foreach (var image in Model)
+    {
+        if (i == 0)
+        {
+            @:<div class="row" style="margin-left: 50px">    
+        }
+
+        <div style="display: inline">
+            @Html.Raw(Html.Image<ImageController>(img => img.GetImage(image.Id, image.Hash, ImageHelper.ImageSize.Small)))
+        </div>
+
+        ++i;
+
+        if (i == 4)
+        {
+            i = 0;
+            @:</div> 
+            <br/>
+        }
+    }
+    if (i < 4)
+    {
+        @:</div> 
+    }
+}
+else
+{
+    <div class="uk-panel uk-panel-box panel-box info-item uk-alert">
+        Не найдено результатов по заданным параметрам поиска
+    </div>
+}
+

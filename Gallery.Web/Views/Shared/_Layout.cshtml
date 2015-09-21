@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@RenderSection("Title", false)</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=9">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="~/Content/css/custom/layout.css" type="text/css" rel="stylesheet"/>
+        <link href="~/Content/css/bootstrap/bootstrap.css" type="text/css" rel="stylesheet"/>
+        <link href="~/Content/css/bootstrap/bootstrap.fix.css" type="text/css" rel="stylesheet"/>
+        <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+        <!--[if lt IE 9]>
+            <link href="~/Content/css/bootstrap/bootstrap.ie8fix.css" type="text/css" rel="stylesheet" />
+            <script src="~/Scripts/html5/html5.js"></script>
+        <![endif]-->
+        <link href="~/Content/css/custom/site.css" type="text/css" rel="stylesheet"/>
+        @RenderSection("Styles", false)
+        <script src="~/Scripts/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery/jquery.cookie.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery/jquery.tmpl.js" type="text/javascript"></script>
+        <script src="~/Scripts/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/custom/site.js" type="text/javascript"></script>
+        <script src="~/Scripts/custom/client.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            REKOD.Utils.init('@ViewContext.RouteData.Values["controller"]', '@ViewContext.RouteData.Values["action"]', '', '/');
+        </script>
+        @RenderSection("Scripts", false)
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+     
+                </div>
+            </div>
+        </div>
+        <div id="wrap">
+            <div class="container-fluid">
+                <div class="center">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+        <div id="footer" style="margin-top: 50px; padding-top: 20px">
+                <p class="center"> &copy; @DateTime.Now.Year Gallery</p>
+        </div>
+    </body>
+</html>
+<div id="dlg-confirm" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="confirm-header-caption" aria-hidden="true">
+    <div class="modal-body">
+        <div class="alert alert-info no-bottom-space">
+            <div class="message-offset"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary" id="act_confirm_ok">
+            <i class="icon-ok icon-white"></i>
+            Да
+        </a>
+        <a href="#" class="btn" data-dismiss="modal" aria-hidden="true" id="act_confirm_cancel">
+            <i class="icon-remove"></i>
+            Нет
+        </a>
+    </div>
+</div>
+<div id="dlg-message" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="confirm-header-caption" aria-hidden="true">
+    <div class="modal-body">
+        <div class="alert alert-info no-bottom-space">
+            <div class="message-offset"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary" id="act_message_ok">
+            <i class="icon-ok icon-white"></i>
+            Закрыть
+        </a>
+    </div>
+</div>
+<div id="dlg-error" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="error-header-caption" aria-hidden="true">
+    <div class="modal-body">
+        <div class="alert alert-error no-bottom-space">
+            <strong>Ошибка!</strong>
+            <br />
+            <div class="message-offset"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal" aria-hidden="true" id="act_error_close">
+            <i class="icon-remove"></i>
+            Закрыть
+        </a>
+    </div>
+</div>

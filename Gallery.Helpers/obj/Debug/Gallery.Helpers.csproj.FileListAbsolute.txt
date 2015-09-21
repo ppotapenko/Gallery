@@ -1,0 +1,12 @@
+D:\Projects\ASP.NET\Gallery\GalleryHelpers\bin\Debug\Gallery.Helpers.dll
+D:\Projects\ASP.NET\Gallery\GalleryHelpers\bin\Debug\Gallery.Helpers.pdb
+D:\Projects\ASP.NET\Gallery\GalleryHelpers\obj\Debug\Gallery.Helpers.dll
+D:\Projects\ASP.NET\Gallery\GalleryHelpers\obj\Debug\Gallery.Helpers.pdb
+D:\Projects\ASP.NET\Gallery\GalleryHelpers\obj\Debug\Gallery.Helpers.csprojResolveAssemblyReference.cache
+D:\Projects\ASP.NET\Gallery\Gallery.Helpers\bin\Debug\Gallery.Helpers.dll
+D:\Projects\ASP.NET\Gallery\Gallery.Helpers\bin\Debug\Gallery.Helpers.pdb
+D:\Projects\ASP.NET\Gallery\Gallery.Helpers\bin\Debug\PagedList.dll
+D:\Projects\ASP.NET\Gallery\Gallery.Helpers\bin\Debug\PagedList.xml
+D:\Projects\ASP.NET\Gallery\Gallery.Helpers\obj\Debug\Gallery.Helpers.csprojResolveAssemblyReference.cache
+D:\Projects\ASP.NET\Gallery\Gallery.Helpers\obj\Debug\Gallery.Helpers.dll
+D:\Projects\ASP.NET\Gallery\Gallery.Helpers\obj\Debug\Gallery.Helpers.pdb

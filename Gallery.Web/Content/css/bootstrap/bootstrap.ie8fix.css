@@ -1,0 +1,7 @@
+.nav-collapse.collapse {
+  overflow: visible !important;
+}
+
+.row-fluid [class*="span"] {
+  min-height: 20px !important;
+}

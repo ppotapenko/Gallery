@@ -1,0 +1,24 @@
+﻿@using Gallery.Helpers
+@helper FlashMessage(TempDataDictionary tempData)
+{
+    <div class="flash-messages">
+        @foreach (FlashLevel level in (FlashLevel[]) Enum.GetValues(typeof(FlashLevel)))
+        {
+            string type = level.ToString().ToLower();
+            string key = "flash-" + type;
+
+            if (tempData.ContainsKey(key))
+            {
+                var messages = (IList<string>)tempData[key];
+                <div class="uk-alert @level.UiKitСssClass() alert-margin" data-uk-alert="">
+                    <a href="" class="uk-alert-close uk-close"></a>
+                    @foreach (var message in messages)
+                    {
+                        @Html.Raw(message)
+                    }    
+                </div>
+            }
+        }
+    </div>
+}
+@FlashMessage(TempData)

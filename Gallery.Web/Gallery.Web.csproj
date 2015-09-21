@@ -1,0 +1,1563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8B7044C-8B87-4995-9DA6-DA87A06EAD4A}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gallery.WEB</RootNamespace>
+    <AssemblyName>Gallery.WEB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Helpers.Mvc.2.0.20710.0\lib\net40\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Autofac\RepositoryModule.cs" />
+    <Compile Include="Autofac\ServiceModule.cs" />
+    <Compile Include="Autofac\UnitOfWorkModule.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Extensions\Attributes\AccessAuthorizeAttribute.cs" />
+    <Compile Include="Extensions\Attributes\CustomHandleErrorAttribute.cs" />
+    <Compile Include="Extensions\Attributes\RememberUrlAttribute.cs" />
+    <Compile Include="Extensions\Attributes\RequiredIfAttribute.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
+    <Compile Include="Extensions\ImageResult.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\ResponseCaptureHelper.cs" />
+    <Compile Include="Mappings\AutoMapperConfiguration.cs" />
+    <Compile Include="Mappings\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="Mappings\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Mappings\ViewModelToSearchCriteriaMappingProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap\bootstrap.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.datepicker.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.fileupload.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.fix.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.grayicons.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.ie8fix.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap\bootstrap.timepicker.css" />
+    <Content Include="Content\css\custom\client.css" />
+    <Content Include="Content\css\custom\layout.css" />
+    <Content Include="Content\css\custom\site.css" />
+    <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\jquery\jquery.chosen.css" />
+    <Content Include="Content\css\jquery\jquery.fullcalendar.css" />
+    <Content Include="Content\css\jquery\jquery.fullcalendar.print.css" />
+    <Content Include="Content\css\uikit\addons\uikit.addons.css" />
+    <Content Include="Content\css\uikit\addons\uikit.addons.min.css" />
+    <Content Include="Content\css\uikit\addons\uikit.almost-flat.addons.css" />
+    <Content Include="Content\css\uikit\addons\uikit.almost-flat.addons.min.css" />
+    <Content Include="Content\css\uikit\addons\uikit.gradient.addons.css" />
+    <Content Include="Content\css\uikit\addons\uikit.gradient.addons.min.css" />
+    <Content Include="Content\css\uikit\uikit.almost-flat.css" />
+    <Content Include="Content\css\uikit\uikit.almost-flat.min.css" />
+    <Content Include="Content\css\uikit\uikit.css" />
+    <Content Include="Content\css\uikit\uikit.gradient.css" />
+    <Content Include="Content\css\uikit\uikit.gradient.min.css" />
+    <Content Include="Content\css\uikit\uikit.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\img\ajax_loader_blue_32.gif" />
+    <Content Include="Content\img\arsis.png" />
+    <Content Include="Content\img\client-bg.jpg" />
+    <Content Include="Content\img\client-head-bg.jpg" />
+    <Content Include="Content\img\error-icon.png" />
+    <Content Include="Content\img\external-link-icon.png" />
+    <Content Include="Content\img\flags\ad.png" />
+    <Content Include="Content\img\flags\ae.png" />
+    <Content Include="Content\img\flags\af.png" />
+    <Content Include="Content\img\flags\ag.png" />
+    <Content Include="Content\img\flags\ai.png" />
+    <Content Include="Content\img\flags\al.png" />
+    <Content Include="Content\img\flags\am.png" />
+    <Content Include="Content\img\flags\an.png" />
+    <Content Include="Content\img\flags\ao.png" />
+    <Content Include="Content\img\flags\aq.png" />
+    <Content Include="Content\img\flags\ar.png" />
+    <Content Include="Content\img\flags\as.png" />
+    <Content Include="Content\img\flags\at.png" />
+    <Content Include="Content\img\flags\au.png" />
+    <Content Include="Content\img\flags\aw.png" />
+    <Content Include="Content\img\flags\ax.png" />
+    <Content Include="Content\img\flags\az.png" />
+    <Content Include="Content\img\flags\ba.png" />
+    <Content Include="Content\img\flags\bb.png" />
+    <Content Include="Content\img\flags\bd.png" />
+    <Content Include="Content\img\flags\be.png" />
+    <Content Include="Content\img\flags\bf.png" />
+    <Content Include="Content\img\flags\bg.png" />
+    <Content Include="Content\img\flags\bh.png" />
+    <Content Include="Content\img\flags\bi.png" />
+    <Content Include="Content\img\flags\bj.png" />
+    <Content Include="Content\img\flags\bl.png" />
+    <Content Include="Content\img\flags\bm.png" />
+    <Content Include="Content\img\flags\bn.png" />
+    <Content Include="Content\img\flags\bo.png" />
+    <Content Include="Content\img\flags\bq.png" />
+    <Content Include="Content\img\flags\br.png" />
+    <Content Include="Content\img\flags\bs.png" />
+    <Content Include="Content\img\flags\bt.png" />
+    <Content Include="Content\img\flags\bv.png" />
+    <Content Include="Content\img\flags\bw.png" />
+    <Content Include="Content\img\flags\by.png" />
+    <Content Include="Content\img\flags\bz.png" />
+    <Content Include="Content\img\flags\ca.png" />
+    <Content Include="Content\img\flags\cc.png" />
+    <Content Include="Content\img\flags\cd.png" />
+    <Content Include="Content\img\flags\cf.png" />
+    <Content Include="Content\img\flags\cg.png" />
+    <Content Include="Content\img\flags\ch.png" />
+    <Content Include="Content\img\flags\ci.png" />
+    <Content Include="Content\img\flags\ck.png" />
+    <Content Include="Content\img\flags\cl.png" />
+    <Content Include="Content\img\flags\cm.png" />
+    <Content Include="Content\img\flags\cn.png" />
+    <Content Include="Content\img\flags\co.png" />
+    <Content Include="Content\img\flags\cr.png" />
+    <Content Include="Content\img\flags\cs.png" />
+    <Content Include="Content\img\flags\cu.png" />
+    <Content Include="Content\img\flags\cv.png" />
+    <Content Include="Content\img\flags\cw.png" />
+    <Content Include="Content\img\flags\cx.png" />
+    <Content Include="Content\img\flags\cy.png" />
+    <Content Include="Content\img\flags\cz.png" />
+    <Content Include="Content\img\flags\de.png" />
+    <Content Include="Content\img\flags\dj.png" />
+    <Content Include="Content\img\flags\dk.png" />
+    <Content Include="Content\img\flags\dm.png" />
+    <Content Include="Content\img\flags\do.png" />
+    <Content Include="Content\img\flags\dz.png" />
+    <Content Include="Content\img\flags\ec.png" />
+    <Content Include="Content\img\flags\ee.png" />
+    <Content Include="Content\img\flags\eg.png" />
+    <Content Include="Content\img\flags\eh.png" />
+    <Content Include="Content\img\flags\empty.png" />
+    <Content Include="Content\img\flags\er.png" />
+    <Content Include="Content\img\flags\es.png" />
+    <Content Include="Content\img\flags\et.png" />
+    <Content Include="Content\img\flags\eu.png" />
+    <Content Include="Content\img\flags\fi.png" />
+    <Content Include="Content\img\flags\fj.png" />
+    <Content Include="Content\img\flags\fk.png" />
+    <Content Include="Content\img\flags\fm.png" />
+    <Content Include="Content\img\flags\fo.png" />
+    <Content Include="Content\img\flags\fr.png" />
+    <Content Include="Content\img\flags\ga.png" />
+    <Content Include="Content\img\flags\gb.png" />
+    <Content Include="Content\img\flags\gd.png" />
+    <Content Include="Content\img\flags\ge.png" />
+    <Content Include="Content\img\flags\gf.png" />
+    <Content Include="Content\img\flags\gg.png" />
+    <Content Include="Content\img\flags\gh.png" />
+    <Content Include="Content\img\flags\gi.png" />
+    <Content Include="Content\img\flags\gl.png" />
+    <Content Include="Content\img\flags\gm.png" />
+    <Content Include="Content\img\flags\gn.png" />
+    <Content Include="Content\img\flags\gp.png" />
+    <Content Include="Content\img\flags\gq.png" />
+    <Content Include="Content\img\flags\gr.png" />
+    <Content Include="Content\img\flags\gs.png" />
+    <Content Include="Content\img\flags\gt.png" />
+    <Content Include="Content\img\flags\gu.png" />
+    <Content Include="Content\img\flags\gw.png" />
+    <Content Include="Content\img\flags\gy.png" />
+    <Content Include="Content\img\flags\hk.png" />
+    <Content Include="Content\img\flags\hm.png" />
+    <Content Include="Content\img\flags\hn.png" />
+    <Content Include="Content\img\flags\hr.png" />
+    <Content Include="Content\img\flags\ht.png" />
+    <Content Include="Content\img\flags\hu.png" />
+    <Content Include="Content\img\flags\id.png" />
+    <Content Include="Content\img\flags\ie.png" />
+    <Content Include="Content\img\flags\il.png" />
+    <Content Include="Content\img\flags\im.png" />
+    <Content Include="Content\img\flags\in.png" />
+    <Content Include="Content\img\flags\io.png" />
+    <Content Include="Content\img\flags\iq.png" />
+    <Content Include="Content\img\flags\ir.png" />
+    <Content Include="Content\img\flags\is.png" />
+    <Content Include="Content\img\flags\it.png" />
+    <Content Include="Content\img\flags\je.png" />
+    <Content Include="Content\img\flags\jm.png" />
+    <Content Include="Content\img\flags\jo.png" />
+    <Content Include="Content\img\flags\jp.png" />
+    <Content Include="Content\img\flags\ke.png" />
+    <Content Include="Content\img\flags\kg.png" />
+    <Content Include="Content\img\flags\kh.png" />
+    <Content Include="Content\img\flags\ki.png" />
+    <Content Include="Content\img\flags\km.png" />
+    <Content Include="Content\img\flags\kn.png" />
+    <Content Include="Content\img\flags\kp.png" />
+    <Content Include="Content\img\flags\kr.png" />
+    <Content Include="Content\img\flags\kw.png" />
+    <Content Include="Content\img\flags\ky.png" />
+    <Content Include="Content\img\flags\kz.png" />
+    <Content Include="Content\img\flags\la.png" />
+    <Content Include="Content\img\flags\lb.png" />
+    <Content Include="Content\img\flags\lc.png" />
+    <Content Include="Content\img\flags\li.png" />
+    <Content Include="Content\img\flags\lk.png" />
+    <Content Include="Content\img\flags\lr.png" />
+    <Content Include="Content\img\flags\ls.png" />
+    <Content Include="Content\img\flags\lt.png" />
+    <Content Include="Content\img\flags\lu.png" />
+    <Content Include="Content\img\flags\lv.png" />
+    <Content Include="Content\img\flags\ly.png" />
+    <Content Include="Content\img\flags\ma.png" />
+    <Content Include="Content\img\flags\mc.png" />
+    <Content Include="Content\img\flags\md.png" />
+    <Content Include="Content\img\flags\me.png" />
+    <Content Include="Content\img\flags\mf.png" />
+    <Content Include="Content\img\flags\mg.png" />
+    <Content Include="Content\img\flags\mh.png" />
+    <Content Include="Content\img\flags\mk.png" />
+    <Content Include="Content\img\flags\ml.png" />
+    <Content Include="Content\img\flags\mm.png" />
+    <Content Include="Content\img\flags\mn.png" />
+    <Content Include="Content\img\flags\mo.png" />
+    <Content Include="Content\img\flags\mp.png" />
+    <Content Include="Content\img\flags\mq.png" />
+    <Content Include="Content\img\flags\mr.png" />
+    <Content Include="Content\img\flags\ms.png" />
+    <Content Include="Content\img\flags\mt.png" />
+    <Content Include="Content\img\flags\mu.png" />
+    <Content Include="Content\img\flags\mv.png" />
+    <Content Include="Content\img\flags\mw.png" />
+    <Content Include="Content\img\flags\mx.png" />
+    <Content Include="Content\img\flags\my.png" />
+    <Content Include="Content\img\flags\mz.png" />
+    <Content Include="Content\img\flags\na.png" />
+    <Content Include="Content\img\flags\nc.png" />
+    <Content Include="Content\img\flags\ne.png" />
+    <Content Include="Content\img\flags\nf.png" />
+    <Content Include="Content\img\flags\ng.png" />
+    <Content Include="Content\img\flags\ni.png" />
+    <Content Include="Content\img\flags\nl.png" />
+    <Content Include="Content\img\flags\no.png" />
+    <Content Include="Content\img\flags\np.png" />
+    <Content Include="Content\img\flags\nr.png" />
+    <Content Include="Content\img\flags\nu.png" />
+    <Content Include="Content\img\flags\nz.png" />
+    <Content Include="Content\img\flags\om.png" />
+    <Content Include="Content\img\flags\pa.png" />
+    <Content Include="Content\img\flags\pe.png" />
+    <Content Include="Content\img\flags\pf.png" />
+    <Content Include="Content\img\flags\pg.png" />
+    <Content Include="Content\img\flags\ph.png" />
+    <Content Include="Content\img\flags\pk.png" />
+    <Content Include="Content\img\flags\pl.png" />
+    <Content Include="Content\img\flags\pm.png" />
+    <Content Include="Content\img\flags\pn.png" />
+    <Content Include="Content\img\flags\pr.png" />
+    <Content Include="Content\img\flags\ps.png" />
+    <Content Include="Content\img\flags\pt.png" />
+    <Content Include="Content\img\flags\pw.png" />
+    <Content Include="Content\img\flags\py.png" />
+    <Content Include="Content\img\flags\qa.png" />
+    <Content Include="Content\img\flags\re.png" />
+    <Content Include="Content\img\flags\ro.png" />
+    <Content Include="Content\img\flags\rs.png" />
+    <Content Include="Content\img\flags\ru.png" />
+    <Content Include="Content\img\flags\rw.png" />
+    <Content Include="Content\img\flags\sa.png" />
+    <Content Include="Content\img\flags\sb.png" />
+    <Content Include="Content\img\flags\sc.png" />
+    <Content Include="Content\img\flags\sd.png" />
+    <Content Include="Content\img\flags\se.png" />
+    <Content Include="Content\img\flags\sg.png" />
+    <Content Include="Content\img\flags\sh.png" />
+    <Content Include="Content\img\flags\si.png" />
+    <Content Include="Content\img\flags\sj.png" />
+    <Content Include="Content\img\flags\sk.png" />
+    <Content Include="Content\img\flags\sl.png" />
+    <Content Include="Content\img\flags\sm.png" />
+    <Content Include="Content\img\flags\sn.png" />
+    <Content Include="Content\img\flags\so.png" />
+    <Content Include="Content\img\flags\sr.png" />
+    <Content Include="Content\img\flags\ss.png" />
+    <Content Include="Content\img\flags\st.png" />
+    <Content Include="Content\img\flags\sv.png" />
+    <Content Include="Content\img\flags\sx.png" />
+    <Content Include="Content\img\flags\sy.png" />
+    <Content Include="Content\img\flags\sz.png" />
+    <Content Include="Content\img\flags\tc.png" />
+    <Content Include="Content\img\flags\td.png" />
+    <Content Include="Content\img\flags\tf.png" />
+    <Content Include="Content\img\flags\tg.png" />
+    <Content Include="Content\img\flags\th.png" />
+    <Content Include="Content\img\flags\tj.png" />
+    <Content Include="Content\img\flags\tk.png" />
+    <Content Include="Content\img\flags\tl.png" />
+    <Content Include="Content\img\flags\tm.png" />
+    <Content Include="Content\img\flags\tn.png" />
+    <Content Include="Content\img\flags\to.png" />
+    <Content Include="Content\img\flags\tr.png" />
+    <Content Include="Content\img\flags\tt.png" />
+    <Content Include="Content\img\flags\tv.png" />
+    <Content Include="Content\img\flags\tw.png" />
+    <Content Include="Content\img\flags\tz.png" />
+    <Content Include="Content\img\flags\ua.png" />
+    <Content Include="Content\img\flags\ug.png" />
+    <Content Include="Content\img\flags\um.png" />
+    <Content Include="Content\img\flags\us.png" />
+    <Content Include="Content\img\flags\uy.png" />
+    <Content Include="Content\img\flags\uz.png" />
+    <Content Include="Content\img\flags\va.png" />
+    <Content Include="Content\img\flags\vc.png" />
+    <Content Include="Content\img\flags\ve.png" />
+    <Content Include="Content\img\flags\vg.png" />
+    <Content Include="Content\img\flags\vi.png" />
+    <Content Include="Content\img\flags\vn.png" />
+    <Content Include="Content\img\flags\vu.png" />
+    <Content Include="Content\img\flags\wf.png" />
+    <Content Include="Content\img\flags\ws.png" />
+    <Content Include="Content\img\flags\ye.png" />
+    <Content Include="Content\img\flags\yt.png" />
+    <Content Include="Content\img\flags\za.png" />
+    <Content Include="Content\img\flags\zm.png" />
+    <Content Include="Content\img\flags\zw.png" />
+    <Content Include="Content\img\glyphicons-halflings-gray.png" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\glyphicons-halflings.png" />
+    <Content Include="Content\img\marker_down.png" />
+    <Content Include="Content\img\marker_error.png" />
+    <Content Include="Content\img\marker_running.png" />
+    <Content Include="Content\img\pin-icon-small.png" />
+    <Content Include="Content\img\rekod-copyright.png" />
+    <Content Include="Content\img\rekod-logo.png" />
+    <Content Include="Content\img\rekod.png" />
+    <Content Include="Content\img\sort_asc.png" />
+    <Content Include="Content\img\sort_desc.png" />
+    <Content Include="Content\img\state-icon-error.png" />
+    <Content Include="Content\img\state-icon-ok.png" />
+    <Content Include="Content\img\state-icon-unavailable.png" />
+    <Content Include="Content\img\throbber.gif" />
+    <Content Include="Content\img\type-icon-manual.png" />
+    <Content Include="Content\img\type-icon-scanner.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\data\100216-1920x1080.jpg" />
+    <Content Include="Images\data\100456-1920x1080.jpg" />
+    <Content Include="Images\data\101519-1920x1080.jpg" />
+    <Content Include="Images\data\101667-1920x1080.jpg" />
+    <Content Include="Images\data\1026-1920x1080.jpg" />
+    <Content Include="Images\data\103417-1920x1080.jpg" />
+    <Content Include="Images\data\104092-1920x1080.jpg" />
+    <Content Include="Images\data\105603-1920x1080.jpg" />
+    <Content Include="Images\data\105921-1920x1080.jpg" />
+    <Content Include="Images\data\10612-1920x1080.jpg" />
+    <Content Include="Images\data\106391-1920x1080.jpg" />
+    <Content Include="Images\data\108417-1920x1080.jpg" />
+    <Content Include="Images\data\110608-1920x1080.jpg" />
+    <Content Include="Images\data\116106-1920x1080.jpg" />
+    <Content Include="Images\data\116219-1920x1080.jpg" />
+    <Content Include="Images\data\117951-1920x1080.jpg" />
+    <Content Include="Images\data\12108-1920x1080.jpg" />
+    <Content Include="Images\data\122350-1920x1080.jpg" />
+    <Content Include="Images\data\122385-1920x1080.jpg" />
+    <Content Include="Images\data\124033-1920x1080.jpg" />
+    <Content Include="Images\data\125976-1920x1080.jpg" />
+    <Content Include="Images\data\126342-1920x1080.jpg" />
+    <Content Include="Images\data\127222-1920x1080.jpg" />
+    <Content Include="Images\data\127436-1920x1080.jpg" />
+    <Content Include="Images\data\130867-1920x1080.jpg" />
+    <Content Include="Images\data\131905-1920x1080.jpg" />
+    <Content Include="Images\data\132550-1920x1080.jpg" />
+    <Content Include="Images\data\134650-1920x1080.jpg" />
+    <Content Include="Images\data\136099-1920x1080.jpg" />
+    <Content Include="Images\data\136651-1920x1080.jpg" />
+    <Content Include="Images\data\136888-1920x1080.jpg" />
+    <Content Include="Images\data\137273-1920x1080.jpg" />
+    <Content Include="Images\data\137432-1920x1080.jpg" />
+    <Content Include="Images\data\137802-1920x1080.jpg" />
+    <Content Include="Images\data\137839-1920x1080.jpg" />
+    <Content Include="Images\data\138501-1920x1080.jpg" />
+    <Content Include="Images\data\139934-1920x1080.jpg" />
+    <Content Include="Images\data\14087-1920x1080.jpg" />
+    <Content Include="Images\data\141565-1920x1080.jpg" />
+    <Content Include="Images\data\141577-1920x1080.jpg" />
+    <Content Include="Images\data\143308-1920x1080.jpg" />
+    <Content Include="Images\data\144436-1920x1080.jpg" />
+    <Content Include="Images\data\153648-1920x1080.jpg" />
+    <Content Include="Images\data\153926-1920x1080.jpg" />
+    <Content Include="Images\data\154393-1920x1080.jpg" />
+    <Content Include="Images\data\157356-1920x1080.jpg" />
+    <Content Include="Images\data\157392-1920x1080.jpg" />
+    <Content Include="Images\data\159114-1920x1080.jpg" />
+    <Content Include="Images\data\163547-1920x1080.jpg" />
+    <Content Include="Images\data\166045-1920x1080.jpg" />
+    <Content Include="Images\data\168901-1920x1080.jpg" />
+    <Content Include="Images\data\169044-1920x1080.jpg" />
+    <Content Include="Images\data\172883-1920x1080.jpg" />
+    <Content Include="Images\data\172892-1920x1080.jpg" />
+    <Content Include="Images\data\185157-1920x1080.jpg" />
+    <Content Include="Images\data\187514-1920x1080.jpg" />
+    <Content Include="Images\data\187704-1920x1080.jpg" />
+    <Content Include="Images\data\189823-1920x1080.jpg" />
+    <Content Include="Images\data\190244-1920x1080.jpg" />
+    <Content Include="Images\data\190446-1920x1080.jpg" />
+    <Content Include="Images\data\190737-1920x1080.jpg" />
+    <Content Include="Images\data\192495-1920x1080.jpg" />
+    <Content Include="Images\data\193347-1920x1080.jpg" />
+    <Content Include="Images\data\193795-1920x1080.jpg" />
+    <Content Include="Images\data\194022-1920x1080.jpg" />
+    <Content Include="Images\data\194966-1920x1080.jpg" />
+    <Content Include="Images\data\195955-1920x1080.jpg" />
+    <Content Include="Images\data\196134-1920x1080.jpg" />
+    <Content Include="Images\data\19725-1920x1080.jpg" />
+    <Content Include="Images\data\199648-1920x1080.jpg" />
+    <Content Include="Images\data\20049-1920x1080.jpg" />
+    <Content Include="Images\data\200597-1920x1080.jpg" />
+    <Content Include="Images\data\201755-1920x1080.jpg" />
+    <Content Include="Images\data\205200-1920x1080.jpg" />
+    <Content Include="Images\data\2057_doroga.jpg" />
+    <Content Include="Images\data\206571-1920x1080.jpg" />
+    <Content Include="Images\data\206913-1920x1080.jpg" />
+    <Content Include="Images\data\207178-1920x1080.jpg" />
+    <Content Include="Images\data\207253-1920x1080.jpg" />
+    <Content Include="Images\data\207335-1920x1080.jpg" />
+    <Content Include="Images\data\207870-1920x1080.jpg" />
+    <Content Include="Images\data\207976-1920x1080.jpg" />
+    <Content Include="Images\data\209689-1920x1080.jpg" />
+    <Content Include="Images\data\210312-1920x1080.jpg" />
+    <Content Include="Images\data\210736-1920x1080.jpg" />
+    <Content Include="Images\data\215913-1920x1080.jpg" />
+    <Content Include="Images\data\216023-1920x1080.jpg" />
+    <Content Include="Images\data\219216-1920x1080.jpg" />
+    <Content Include="Images\data\219448-1920x1080.jpg" />
+    <Content Include="Images\data\219832-1920x1080.jpg" />
+    <Content Include="Images\data\220728-1920x1080.jpg" />
+    <Content Include="Images\data\221830-1920x1080.jpg" />
+    <Content Include="Images\data\222143-1920x1080.jpg" />
+    <Content Include="Images\data\222657-1920x1080.jpg" />
+    <Content Include="Images\data\224082-1920x1080.jpg" />
+    <Content Include="Images\data\224235-1920x1080.jpg" />
+    <Content Include="Images\data\224289-1920x1080.jpg" />
+    <Content Include="Images\data\225004-1920x1080.jpg" />
+    <Content Include="Images\data\225029-1920x1080.jpg" />
+    <Content Include="Images\data\225665-1920x1080.jpg" />
+    <Content Include="Images\data\228477-1920x1080.jpg" />
+    <Content Include="Images\data\228501-1920x1080.jpg" />
+    <Content Include="Images\data\229219-1920x1080.jpg" />
+    <Content Include="Images\data\229639-1920x1080.jpg" />
+    <Content Include="Images\data\22982-1920x1080.jpg" />
+    <Content Include="Images\data\231078-1920x1080.jpg" />
+    <Content Include="Images\data\231603-1920x1080.jpg" />
+    <Content Include="Images\data\231945-1920x1080.jpg" />
+    <Content Include="Images\data\236336-1920x1080.jpg" />
+    <Content Include="Images\data\236de7a392edd3a18ce07253f1069f17.jpg" />
+    <Content Include="Images\data\238693-1920x1080.jpg" />
+    <Content Include="Images\data\2388-1920x1080.jpg" />
+    <Content Include="Images\data\239162-1920x1080.jpg" />
+    <Content Include="Images\data\239382-1920x1080.jpg" />
+    <Content Include="Images\data\239407-1920x1080.jpg" />
+    <Content Include="Images\data\240041-1920x1080.jpg" />
+    <Content Include="Images\data\240121-1920x1080.jpg" />
+    <Content Include="Images\data\241141-1920x1080.jpg" />
+    <Content Include="Images\data\241473-1920x1080.jpg" />
+    <Content Include="Images\data\241499-1920x1080.jpg" />
+    <Content Include="Images\data\241966-1920x1080.jpg" />
+    <Content Include="Images\data\242678-1920x1080.jpg" />
+    <Content Include="Images\data\242877-1920x1080.jpg" />
+    <Content Include="Images\data\242922-1920x1080.jpg" />
+    <Content Include="Images\data\243046-1920x1080.jpg" />
+    <Content Include="Images\data\243255-1920x1080.jpg" />
+    <Content Include="Images\data\243465-1920x1080.jpg" />
+    <Content Include="Images\data\243549-1920x1080.jpg" />
+    <Content Include="Images\data\243610-1920x1080.jpg" />
+    <Content Include="Images\data\243938-1920x1080.jpg" />
+    <Content Include="Images\data\244074-1920x1080.jpg" />
+    <Content Include="Images\data\244254-1920x1080.jpg" />
+    <Content Include="Images\data\244564-1920x1080.jpg" />
+    <Content Include="Images\data\245153-1920x1080.jpg" />
+    <Content Include="Images\data\245271-1920x1080.jpg" />
+    <Content Include="Images\data\245948-1920x1080.jpg" />
+    <Content Include="Images\data\245957-1920x1080.jpg" />
+    <Content Include="Images\data\245959-1920x1080.jpg" />
+    <Content Include="Images\data\246083-1920x1080.jpg" />
+    <Content Include="Images\data\246084-1920x1080.jpg" />
+    <Content Include="Images\data\246209-1920x1080.jpg" />
+    <Content Include="Images\data\246389-1920x1080.jpg" />
+    <Content Include="Images\data\246511-1920x1080.jpg" />
+    <Content Include="Images\data\247042-1920x1080.jpg" />
+    <Content Include="Images\data\247191-1920x1080.jpg" />
+    <Content Include="Images\data\247221-1920x1080.jpg" />
+    <Content Include="Images\data\247258-1920x1080.jpg" />
+    <Content Include="Images\data\247467-1920x1080.jpg" />
+    <Content Include="Images\data\247508-1920x1080.jpg" />
+    <Content Include="Images\data\248175-1920x1080.jpg" />
+    <Content Include="Images\data\248413-1920x1080.jpg" />
+    <Content Include="Images\data\248508-1920x1080.jpg" />
+    <Content Include="Images\data\248838-1920x1080.jpg" />
+    <Content Include="Images\data\249604-1920x1080.jpg" />
+    <Content Include="Images\data\250101-1920x1080.jpg" />
+    <Content Include="Images\data\250736-1920x1080.jpg" />
+    <Content Include="Images\data\251888-1920x1080.jpg" />
+    <Content Include="Images\data\252042-1920x1080.jpg" />
+    <Content Include="Images\data\252756-1920x1080.jpg" />
+    <Content Include="Images\data\252851-1920x1080.jpg" />
+    <Content Include="Images\data\252980-1920x1080.jpg" />
+    <Content Include="Images\data\253511-1920x1080.jpg" />
+    <Content Include="Images\data\253562-1920x1080.jpg" />
+    <Content Include="Images\data\254383-1920x1080.jpg" />
+    <Content Include="Images\data\254811-1920x1080.jpg" />
+    <Content Include="Images\data\255341-1920x1080.jpg" />
+    <Content Include="Images\data\255398-1920x1080.jpg" />
+    <Content Include="Images\data\255439-1920x1080.jpg" />
+    <Content Include="Images\data\255443-1920x1080.jpg" />
+    <Content Include="Images\data\255568-1920x1080.jpg" />
+    <Content Include="Images\data\255813-1920x1080.jpg" />
+    <Content Include="Images\data\256347-1920x1080.jpg" />
+    <Content Include="Images\data\256560-1920x1080.jpg" />
+    <Content Include="Images\data\256993-1920x1080.jpg" />
+    <Content Include="Images\data\257085-1920x1080.jpg" />
+    <Content Include="Images\data\257567-1920x1080.jpg" />
+    <Content Include="Images\data\257692-1920x1080.jpg" />
+    <Content Include="Images\data\258408-1920x1080.jpg" />
+    <Content Include="Images\data\258651-1920x1080.jpg" />
+    <Content Include="Images\data\260520-1920x1080.jpg" />
+    <Content Include="Images\data\260878-1920x1080.jpg" />
+    <Content Include="Images\data\261049-1920x1080.jpg" />
+    <Content Include="Images\data\261326-1920x1080.jpg" />
+    <Content Include="Images\data\261654-1920x1080.jpg" />
+    <Content Include="Images\data\262220-1920x1080.jpg" />
+    <Content Include="Images\data\262777-1920x1080.jpg" />
+    <Content Include="Images\data\263205-1920x1080.jpg" />
+    <Content Include="Images\data\263217-1920x1080.jpg" />
+    <Content Include="Images\data\263231-1920x1080.jpg" />
+    <Content Include="Images\data\263241-1920x1080.jpg" />
+    <Content Include="Images\data\263618-1920x1080.jpg" />
+    <Content Include="Images\data\263977-1920x1080.jpg" />
+    <Content Include="Images\data\264050-1920x1080.jpg" />
+    <Content Include="Images\data\264289-1920x1080.jpg" />
+    <Content Include="Images\data\264623-1920x1080.jpg" />
+    <Content Include="Images\data\265062-1920x1080.jpg" />
+    <Content Include="Images\data\265676-1920x1080.jpg" />
+    <Content Include="Images\data\265713-1920x1080.jpg" />
+    <Content Include="Images\data\266090-1920x1080.jpg" />
+    <Content Include="Images\data\266160-1920x1080.jpg" />
+    <Content Include="Images\data\267107-1920x1080.jpg" />
+    <Content Include="Images\data\268167-1920x1080.jpg" />
+    <Content Include="Images\data\268359-1920x1080.jpg" />
+    <Content Include="Images\data\268677-1920x1080.jpg" />
+    <Content Include="Images\data\268995-1920x1080.jpg" />
+    <Content Include="Images\data\269556-1920x1080.jpg" />
+    <Content Include="Images\data\270040-1920x1080.jpg" />
+    <Content Include="Images\data\270593-1920x1080.jpg" />
+    <Content Include="Images\data\270603-1920x1080.jpg" />
+    <Content Include="Images\data\271755-1920x1080.jpg" />
+    <Content Include="Images\data\271778-1920x1080.jpg" />
+    <Content Include="Images\data\271869-1920x1080.jpg" />
+    <Content Include="Images\data\271874-1920x1080.jpg" />
+    <Content Include="Images\data\272268-1920x1080.jpg" />
+    <Content Include="Images\data\272408-1920x1080.jpg" />
+    <Content Include="Images\data\272410-1920x1080.jpg" />
+    <Content Include="Images\data\272494-1920x1080.jpg" />
+    <Content Include="Images\data\272940-1920x1080.jpg" />
+    <Content Include="Images\data\273626-1920x1080.jpg" />
+    <Content Include="Images\data\275068-1920x1080.jpg" />
+    <Content Include="Images\data\275225-1920x1080.jpg" />
+    <Content Include="Images\data\275723-1920x1080.jpg" />
+    <Content Include="Images\data\275868-1920x1080.jpg" />
+    <Content Include="Images\data\275920-1920x1080.jpg" />
+    <Content Include="Images\data\279449-1920x1080.jpg" />
+    <Content Include="Images\data\281820-1920x1080.jpg" />
+    <Content Include="Images\data\282065-1920x1080.jpg" />
+    <Content Include="Images\data\282158-1920x1080.jpg" />
+    <Content Include="Images\data\282387-1920x1080.jpg" />
+    <Content Include="Images\data\282785-1920x1080.jpg" />
+    <Content Include="Images\data\2833-1920x1080.jpg" />
+    <Content Include="Images\data\283572-1920x1080.jpg" />
+    <Content Include="Images\data\283926-1920x1080.jpg" />
+    <Content Include="Images\data\285208-1920x1080.jpg" />
+    <Content Include="Images\data\285718-1920x1080.jpg" />
+    <Content Include="Images\data\285842-1920x1080.jpg" />
+    <Content Include="Images\data\286144-1920x1080.jpg" />
+    <Content Include="Images\data\286388-1920x1080.jpg" />
+    <Content Include="Images\data\287236-1920x1080.jpg" />
+    <Content Include="Images\data\287258-1920x1080.jpg" />
+    <Content Include="Images\data\287694-1920x1080.jpg" />
+    <Content Include="Images\data\287782-1920x1080.jpg" />
+    <Content Include="Images\data\288271-1920x1080.jpg" />
+    <Content Include="Images\data\288526-1920x1080.jpg" />
+    <Content Include="Images\data\288868-1920x1080.jpg" />
+    <Content Include="Images\data\290102-1920x1080.jpg" />
+    <Content Include="Images\data\290129-1920x1080.jpg" />
+    <Content Include="Images\data\290284-1920x1080.jpg" />
+    <Content Include="Images\data\290495-1920x1080.jpg" />
+    <Content Include="Images\data\290789-1920x1080.jpg" />
+    <Content Include="Images\data\291354-1920x1080.jpg" />
+    <Content Include="Images\data\291816-1920x1080.jpg" />
+    <Content Include="Images\data\292164-1920x1080.jpg" />
+    <Content Include="Images\data\292791-1920x1080.jpg" />
+    <Content Include="Images\data\293065-1920x1080.jpg" />
+    <Content Include="Images\data\293146-1920x1080.jpg" />
+    <Content Include="Images\data\293523-1920x1080.jpg" />
+    <Content Include="Images\data\294126-1920x1080.jpg" />
+    <Content Include="Images\data\294475-1920x1080.jpg" />
+    <Content Include="Images\data\295400-1920x1080.jpg" />
+    <Content Include="Images\data\295458-1920x1080.jpg" />
+    <Content Include="Images\data\296098-1920x1080.jpg" />
+    <Content Include="Images\data\299007-1920x1080.jpg" />
+    <Content Include="Images\data\300284-1920x1080.jpg" />
+    <Content Include="Images\data\301030-1920x1080.jpg" />
+    <Content Include="Images\data\301039-1920x1080.jpg" />
+    <Content Include="Images\data\301040-1920x1080.jpg" />
+    <Content Include="Images\data\302990-1920x1080.jpg" />
+    <Content Include="Images\data\303069-1920x1080.jpg" />
+    <Content Include="Images\data\303263-1920x1080.jpg" />
+    <Content Include="Images\data\303297-1920x1080.jpg" />
+    <Content Include="Images\data\303350-1920x1080.jpg" />
+    <Content Include="Images\data\303881-1920x1080.jpg" />
+    <Content Include="Images\data\304480-1920x1080.jpg" />
+    <Content Include="Images\data\30468-1920x1080.jpg" />
+    <Content Include="Images\data\305223-1920x1080.jpg" />
+    <Content Include="Images\data\305320-1920x1080.jpg" />
+    <Content Include="Images\data\305434-1920x1080.jpg" />
+    <Content Include="Images\data\305631-1920x1080.jpg" />
+    <Content Include="Images\data\305634-1920x1080.jpg" />
+    <Content Include="Images\data\306041-1920x1080.jpg" />
+    <Content Include="Images\data\306111-1920x1080.jpg" />
+    <Content Include="Images\data\306723-1920x1080.jpg" />
+    <Content Include="Images\data\306930-1920x1080.jpg" />
+    <Content Include="Images\data\307213-1920x1080.jpg" />
+    <Content Include="Images\data\307226-1920x1080.jpg" />
+    <Content Include="Images\data\307653-1920x1080.jpg" />
+    <Content Include="Images\data\307655-1920x1080.jpg" />
+    <Content Include="Images\data\308765-1920x1080.jpg" />
+    <Content Include="Images\data\308770-1920x1080.jpg" />
+    <Content Include="Images\data\309116-1920x1080.jpg" />
+    <Content Include="Images\data\309133-1920x1080.jpg" />
+    <Content Include="Images\data\309134-1920x1080.jpg" />
+    <Content Include="Images\data\309897-1920x1080.jpg" />
+    <Content Include="Images\data\310147-1920x1080.jpg" />
+    <Content Include="Images\data\310470-1920x1080.jpg" />
+    <Content Include="Images\data\311051-1920x1080.jpg" />
+    <Content Include="Images\data\311912-1920x1080.jpg" />
+    <Content Include="Images\data\312047-1920x1080.jpg" />
+    <Content Include="Images\data\312792-1920x1080.jpg" />
+    <Content Include="Images\data\313018-1920x1080.jpg" />
+    <Content Include="Images\data\313309-1920x1080.jpg" />
+    <Content Include="Images\data\313318-1920x1080.jpg" />
+    <Content Include="Images\data\313323-1920x1080.jpg" />
+    <Content Include="Images\data\313330-1920x1080.jpg" />
+    <Content Include="Images\data\313906-1920x1080.jpg" />
+    <Content Include="Images\data\314290-1920x1080.jpg" />
+    <Content Include="Images\data\314463-1920x1080.jpg" />
+    <Content Include="Images\data\315463-1920x1080.jpg" />
+    <Content Include="Images\data\316349-1920x1080.jpg" />
+    <Content Include="Images\data\316782-1920x1080.jpg" />
+    <Content Include="Images\data\316958-1920x1080.jpg" />
+    <Content Include="Images\data\317874-1920x1080.jpg" />
+    <Content Include="Images\data\318049-1920x1080.jpg" />
+    <Content Include="Images\data\318826-1920x1080.jpg" />
+    <Content Include="Images\data\319545-1920x1080.jpg" />
+    <Content Include="Images\data\321584-1920x1080.jpg" />
+    <Content Include="Images\data\322039-1920x1080.jpg" />
+    <Content Include="Images\data\322108-1920x1080.jpg" />
+    <Content Include="Images\data\322280-1920x1080.jpg" />
+    <Content Include="Images\data\322468-1920x1080.jpg" />
+    <Content Include="Images\data\323430-1920x1080.jpg" />
+    <Content Include="Images\data\323785-1920x1080.jpg" />
+    <Content Include="Images\data\324109-1920x1080.jpg" />
+    <Content Include="Images\data\324827-1920x1080.jpg" />
+    <Content Include="Images\data\324843-1920x1080.jpg" />
+    <Content Include="Images\data\325143-1920x1080.jpg" />
+    <Content Include="Images\data\325209-1920x1080.jpg" />
+    <Content Include="Images\data\326080-1920x1080.jpg" />
+    <Content Include="Images\data\326885-1920x1080.jpg" />
+    <Content Include="Images\data\327107-1920x1080.jpg" />
+    <Content Include="Images\data\327358-1920x1080.jpg" />
+    <Content Include="Images\data\327859-1920x1080.jpg" />
+    <Content Include="Images\data\327927-1920x1080.jpg" />
+    <Content Include="Images\data\328073-1920x1080.jpg" />
+    <Content Include="Images\data\329102-1920x1080.jpg" />
+    <Content Include="Images\data\329115-1920x1080.jpg" />
+    <Content Include="Images\data\330695-1920x1080.jpg" />
+    <Content Include="Images\data\331781-1920x1080.jpg" />
+    <Content Include="Images\data\331954-1920x1080.jpg" />
+    <Content Include="Images\data\332156-1920x1080.jpg" />
+    <Content Include="Images\data\332484-1920x1080.jpg" />
+    <Content Include="Images\data\332532-1920x1080.jpg" />
+    <Content Include="Images\data\332585-1920x1080.jpg" />
+    <Content Include="Images\data\332831-1920x1080.jpg" />
+    <Content Include="Images\data\334726-1920x1080.jpg" />
+    <Content Include="Images\data\334981-1920x1080.jpg" />
+    <Content Include="Images\data\335831-1920x1080.jpg" />
+    <Content Include="Images\data\336115-1920x1080.jpg" />
+    <Content Include="Images\data\336152-1920x1080.jpg" />
+    <Content Include="Images\data\336557-1920x1080.jpg" />
+    <Content Include="Images\data\337074-1920x1080.jpg" />
+    <Content Include="Images\data\337081-1920x1080.jpg" />
+    <Content Include="Images\data\337804-1920x1080.jpg" />
+    <Content Include="Images\data\337812-1920x1080.jpg" />
+    <Content Include="Images\data\338009-1920x1080.jpg" />
+    <Content Include="Images\data\339253-1920x1080.jpg" />
+    <Content Include="Images\data\339580-1920x1080.jpg" />
+    <Content Include="Images\data\339764-1920x1080.jpg" />
+    <Content Include="Images\data\339908-1920x1080.jpg" />
+    <Content Include="Images\data\340243-1920x1080.jpg" />
+    <Content Include="Images\data\341068-1920x1080.jpg" />
+    <Content Include="Images\data\341154-1920x1080.jpg" />
+    <Content Include="Images\data\341287-1920x1080.jpg" />
+    <Content Include="Images\data\341300-1920x1080.jpg" />
+    <Content Include="Images\data\341607-1920x1080.jpg" />
+    <Content Include="Images\data\341716-1920x1080.jpg" />
+    <Content Include="Images\data\342079-1920x1080.jpg" />
+    <Content Include="Images\data\343884-1920x1080.jpg" />
+    <Content Include="Images\data\343892-1920x1080.jpg" />
+    <Content Include="Images\data\344087-1920x1080.jpg" />
+    <Content Include="Images\data\344221-1920x1080.jpg" />
+    <Content Include="Images\data\345219-1920x1080.jpg" />
+    <Content Include="Images\data\345374-1920x1080.jpg" />
+    <Content Include="Images\data\346022-1920x1080.jpg" />
+    <Content Include="Images\data\346024-1920x1080.jpg" />
+    <Content Include="Images\data\346046-1920x1080.jpg" />
+    <Content Include="Images\data\346150-1920x1080.jpg" />
+    <Content Include="Images\data\346910-1920x1080.jpg" />
+    <Content Include="Images\data\347762-1920x1080.jpg" />
+    <Content Include="Images\data\347918-1920x1080.jpg" />
+    <Content Include="Images\data\349081-1920x1080.jpg" />
+    <Content Include="Images\data\349299-1920x1080.jpg" />
+    <Content Include="Images\data\349606-1920x1080.jpg" />
+    <Content Include="Images\data\349611-1920x1080.jpg" />
+    <Content Include="Images\data\349626-1920x1080.jpg" />
+    <Content Include="Images\data\349702-1920x1080.jpg" />
+    <Content Include="Images\data\349852-1920x1080.jpg" />
+    <Content Include="Images\data\350292-1920x1080.jpg" />
+    <Content Include="Images\data\350695-1920x1080.jpg" />
+    <Content Include="Images\data\350811-1920x1080.jpg" />
+    <Content Include="Images\data\351569-1920x1080.jpg" />
+    <Content Include="Images\data\351575-1920x1080.jpg" />
+    <Content Include="Images\data\351578-1920x1080.jpg" />
+    <Content Include="Images\data\351579-1920x1080.jpg" />
+    <Content Include="Images\data\351987-1920x1080.jpg" />
+    <Content Include="Images\data\352039-1920x1080.jpg" />
+    <Content Include="Images\data\352464-1920x1080.jpg" />
+    <Content Include="Images\data\352837-1920x1080.jpg" />
+    <Content Include="Images\data\353359-1920x1080.jpg" />
+    <Content Include="Images\data\353674-1920x1080.jpg" />
+    <Content Include="Images\data\355383-1920x1080.jpg" />
+    <Content Include="Images\data\356310-1920x1080.jpg" />
+    <Content Include="Images\data\358054-1920x1080.jpg" />
+    <Content Include="Images\data\358489-1920x1080.jpg" />
+    <Content Include="Images\data\358491-1920x1080.jpg" />
+    <Content Include="Images\data\358520-1920x1080.jpg" />
+    <Content Include="Images\data\359774-1920x1080.jpg" />
+    <Content Include="Images\data\359898-1920x1080.jpg" />
+    <Content Include="Images\data\360527-1920x1080.jpg" />
+    <Content Include="Images\data\361849-1920x1080.jpg" />
+    <Content Include="Images\data\362138-1920x1080.jpg" />
+    <Content Include="Images\data\362452-1920x1080.jpg" />
+    <Content Include="Images\data\363780-1920x1080.jpg" />
+    <Content Include="Images\data\363784-1920x1080.jpg" />
+    <Content Include="Images\data\363785-1920x1080.jpg" />
+    <Content Include="Images\data\363919-1920x1080.jpg" />
+    <Content Include="Images\data\364071-1920x1080.jpg" />
+    <Content Include="Images\data\364551-1920x1080.jpg" />
+    <Content Include="Images\data\364973-1920x1080.jpg" />
+    <Content Include="Images\data\364976-1920x1080.jpg" />
+    <Content Include="Images\data\366305-1920x1080.jpg" />
+    <Content Include="Images\data\366690-1920x1080.jpg" />
+    <Content Include="Images\data\368036-1920x1080.jpg" />
+    <Content Include="Images\data\369049-1920x1080.jpg" />
+    <Content Include="Images\data\370123-1920x1080.jpg" />
+    <Content Include="Images\data\370302-1920x1080.jpg" />
+    <Content Include="Images\data\370504-1920x1080.jpg" />
+    <Content Include="Images\data\370753-1920x1080.jpg" />
+    <Content Include="Images\data\370841-1920x1080.jpg" />
+    <Content Include="Images\data\371183-1920x1080.jpg" />
+    <Content Include="Images\data\371990-1920x1080.jpg" />
+    <Content Include="Images\data\371993-1920x1080.jpg" />
+    <Content Include="Images\data\372055-1920x1080.jpg" />
+    <Content Include="Images\data\372604-1920x1080.jpg" />
+    <Content Include="Images\data\372767-1920x1080.jpg" />
+    <Content Include="Images\data\376803-1920x1080.jpg" />
+    <Content Include="Images\data\376901-1920x1080.jpg" />
+    <Content Include="Images\data\376918-1920x1080.jpg" />
+    <Content Include="Images\data\377351-1920x1080.jpg" />
+    <Content Include="Images\data\377430-1920x1080.jpg" />
+    <Content Include="Images\data\377442-1920x1080.jpg" />
+    <Content Include="Images\data\377444-1920x1080.jpg" />
+    <Content Include="Images\data\377612-1920x1080.jpg" />
+    <Content Include="Images\data\378790-1920x1080.jpg" />
+    <Content Include="Images\data\378988-1920x1080.jpg" />
+    <Content Include="Images\data\379049-1920x1080.jpg" />
+    <Content Include="Images\data\379202-1920x1080.jpg" />
+    <Content Include="Images\data\379349-1920x1080.jpg" />
+    <Content Include="Images\data\379822-1920x1080.jpg" />
+    <Content Include="Images\data\380588-1920x1080.jpg" />
+    <Content Include="Images\data\381777-1920x1080.jpg" />
+    <Content Include="Images\data\383133-1920x1080.jpg" />
+    <Content Include="Images\data\383138-1920x1080.jpg" />
+    <Content Include="Images\data\383403-1920x1080.jpg" />
+    <Content Include="Images\data\383571-1920x1080.jpg" />
+    <Content Include="Images\data\383779-1920x1080.jpg" />
+    <Content Include="Images\data\384147-1920x1080.jpg" />
+    <Content Include="Images\data\386254-1920x1080.jpg" />
+    <Content Include="Images\data\386274-1920x1080.jpg" />
+    <Content Include="Images\data\386634-1920x1080.jpg" />
+    <Content Include="Images\data\387048-1920x1080.jpg" />
+    <Content Include="Images\data\387529-1920x1080.jpg" />
+    <Content Include="Images\data\388875-1920x1080.jpg" />
+    <Content Include="Images\data\389373-1920x1080.jpg" />
+    <Content Include="Images\data\390526-1920x1080.jpg" />
+    <Content Include="Images\data\391664-1920x1080.jpg" />
+    <Content Include="Images\data\391970-1920x1080.jpg" />
+    <Content Include="Images\data\392076-1920x1080.jpg" />
+    <Content Include="Images\data\392369-1920x1080.jpg" />
+    <Content Include="Images\data\393827-1920x1080.jpg" />
+    <Content Include="Images\data\394051-1920x1080.jpg" />
+    <Content Include="Images\data\394714-1920x1080.jpg" />
+    <Content Include="Images\data\396952-1920x1080.jpg" />
+    <Content Include="Images\data\399040-1920x1080.jpg" />
+    <Content Include="Images\data\399138-1920x1080.jpg" />
+    <Content Include="Images\data\401240-1920x1080.jpg" />
+    <Content Include="Images\data\401887-1920x1080.jpg" />
+    <Content Include="Images\data\402295-1920x1080.jpg" />
+    <Content Include="Images\data\406349-1920x1080.jpg" />
+    <Content Include="Images\data\409224-1920x1080.jpg" />
+    <Content Include="Images\data\4104-1920x1080.jpg" />
+    <Content Include="Images\data\411926-1920x1080.jpg" />
+    <Content Include="Images\data\411946-1920x1080.jpg" />
+    <Content Include="Images\data\412135-1920x1080.jpg" />
+    <Content Include="Images\data\412271-1920x1080.jpg" />
+    <Content Include="Images\data\412661-1920x1080.jpg" />
+    <Content Include="Images\data\413658-1920x1080.jpg" />
+    <Content Include="Images\data\414058-1920x1080.jpg" />
+    <Content Include="Images\data\414500-1920x1080.jpg" />
+    <Content Include="Images\data\414989-1920x1080.jpg" />
+    <Content Include="Images\data\415655-1920x1080.jpg" />
+    <Content Include="Images\data\416045-1920x1080.jpg" />
+    <Content Include="Images\data\416467-1920x1080.jpg" />
+    <Content Include="Images\data\417917-1920x1080.jpg" />
+    <Content Include="Images\data\418089-1920x1080.jpg" />
+    <Content Include="Images\data\418719-1920x1080.jpg" />
+    <Content Include="Images\data\420131-1920x1080.jpg" />
+    <Content Include="Images\data\421230-1920x1080.jpg" />
+    <Content Include="Images\data\421359-1920x1080.jpg" />
+    <Content Include="Images\data\421737-1920x1080.jpg" />
+    <Content Include="Images\data\421749-1920x1080.jpg" />
+    <Content Include="Images\data\423309-1920x1080.jpg" />
+    <Content Include="Images\data\426382-1920x1080.jpg" />
+    <Content Include="Images\data\426396-1920x1080.jpg" />
+    <Content Include="Images\data\426428-1920x1080.jpg" />
+    <Content Include="Images\data\427223-1920x1080.jpg" />
+    <Content Include="Images\data\427898-1920x1080.jpg" />
+    <Content Include="Images\data\42811-1920x1080.jpg" />
+    <Content Include="Images\data\428451-1920x1080.jpg" />
+    <Content Include="Images\data\429890-1920x1080.jpg" />
+    <Content Include="Images\data\429989-1920x1080.jpg" />
+    <Content Include="Images\data\430398-1920x1080.jpg" />
+    <Content Include="Images\data\432730-1920x1080.jpg" />
+    <Content Include="Images\data\434435-1920x1080.jpg" />
+    <Content Include="Images\data\435099-1920x1080.jpg" />
+    <Content Include="Images\data\435381-1920x1080.jpg" />
+    <Content Include="Images\data\439274-1920x1080.jpg" />
+    <Content Include="Images\data\440757-1920x1080.jpg" />
+    <Content Include="Images\data\443079-1920x1080.jpg" />
+    <Content Include="Images\data\443975-1920x1080.jpg" />
+    <Content Include="Images\data\444202-1920x1080.jpg" />
+    <Content Include="Images\data\444700-1920x1080.jpg" />
+    <Content Include="Images\data\447034-1920x1080.jpg" />
+    <Content Include="Images\data\447411-1920x1080.jpg" />
+    <Content Include="Images\data\447475-1920x1080.jpg" />
+    <Content Include="Images\data\447700-1920x1080.jpg" />
+    <Content Include="Images\data\455397-1920x1080.jpg" />
+    <Content Include="Images\data\455398-1920x1080.jpg" />
+    <Content Include="Images\data\455543-1920x1080.jpg" />
+    <Content Include="Images\data\459157-1920x1080.jpg" />
+    <Content Include="Images\data\459537-1920x1080.jpg" />
+    <Content Include="Images\data\464088-1920x1080.jpg" />
+    <Content Include="Images\data\464159-1920x1080.jpg" />
+    <Content Include="Images\data\464167-1920x1080.jpg" />
+    <Content Include="Images\data\466532-1920x1080.jpg" />
+    <Content Include="Images\data\470514-1920x1080.jpg" />
+    <Content Include="Images\data\472295-1920x1080.jpg" />
+    <Content Include="Images\data\473599-1920x1080.jpg" />
+    <Content Include="Images\data\475085-1920x1080.jpg" />
+    <Content Include="Images\data\476763-1920x1080.jpg" />
+    <Content Include="Images\data\477200-1920x1080.jpg" />
+    <Content Include="Images\data\478165-1920x1080.jpg" />
+    <Content Include="Images\data\478902-1920x1080.jpg" />
+    <Content Include="Images\data\482479-1920x1080.jpg" />
+    <Content Include="Images\data\483941-1920x1080.jpg" />
+    <Content Include="Images\data\484035-1920x1080.jpg" />
+    <Content Include="Images\data\484271-1920x1080.jpg" />
+    <Content Include="Images\data\485835-1920x1080.jpg" />
+    <Content Include="Images\data\486306-1920x1080.jpg" />
+    <Content Include="Images\data\486314-1920x1080.jpg" />
+    <Content Include="Images\data\487840-1920x1080.jpg" />
+    <Content Include="Images\data\488070-1920x1080.jpg" />
+    <Content Include="Images\data\489340-1920x1080.jpg" />
+    <Content Include="Images\data\489842-1920x1080.jpg" />
+    <Content Include="Images\data\489969-1920x1080.jpg" />
+    <Content Include="Images\data\490485-1920x1080.jpg" />
+    <Content Include="Images\data\494926-1920x1080.jpg" />
+    <Content Include="Images\data\495158-1920x1080.jpg" />
+    <Content Include="Images\data\495548-1920x1080.jpg" />
+    <Content Include="Images\data\49951-1920x1080.jpg" />
+    <Content Include="Images\data\500640-1920x1080.jpg" />
+    <Content Include="Images\data\500734-1920x1080.jpg" />
+    <Content Include="Images\data\500899-1920x1080.jpg" />
+    <Content Include="Images\data\501812-1920x1080.jpg" />
+    <Content Include="Images\data\502428-1920x1080.jpg" />
+    <Content Include="Images\data\502926-1920x1080.jpg" />
+    <Content Include="Images\data\503031-1920x1080.jpg" />
+    <Content Include="Images\data\504607-1920x1080.jpg" />
+    <Content Include="Images\data\506007-1920x1080.jpg" />
+    <Content Include="Images\data\506156-1920x1080.jpg" />
+    <Content Include="Images\data\506512-1920x1080.jpg" />
+    <Content Include="Images\data\508831-1920x1080.jpg" />
+    <Content Include="Images\data\509025-1920x1080.jpg" />
+    <Content Include="Images\data\510685-1920x1080.jpg" />
+    <Content Include="Images\data\511593-1920x1080.jpg" />
+    <Content Include="Images\data\512503-1920x1080.jpg" />
+    <Content Include="Images\data\512737-1920x1080.jpg" />
+    <Content Include="Images\data\513773-1920x1080.jpg" />
+    <Content Include="Images\data\513860-1920x1080.jpg" />
+    <Content Include="Images\data\515660-1920x1080.jpg" />
+    <Content Include="Images\data\515845-1920x1080.jpg" />
+    <Content Include="Images\data\515848-1920x1080.jpg" />
+    <Content Include="Images\data\517194-1920x1080.jpg" />
+    <Content Include="Images\data\517634-1920x1080.jpg" />
+    <Content Include="Images\data\517925-1920x1080.jpg" />
+    <Content Include="Images\data\518004-1920x1080.jpg" />
+    <Content Include="Images\data\518638-1920x1080.jpg" />
+    <Content Include="Images\data\518798-1920x1080.jpg" />
+    <Content Include="Images\data\519345-1920x1080.jpg" />
+    <Content Include="Images\data\520053-1920x1080.jpg" />
+    <Content Include="Images\data\520427-1920x1080.jpg" />
+    <Content Include="Images\data\520467-1920x1080.jpg" />
+    <Content Include="Images\data\520520-1920x1080.jpg" />
+    <Content Include="Images\data\522914-1920x1080.jpg" />
+    <Content Include="Images\data\524569-1920x1080.jpg" />
+    <Content Include="Images\data\524616-1920x1080.jpg" />
+    <Content Include="Images\data\525349-1920x1080.jpg" />
+    <Content Include="Images\data\525376-1920x1080.jpg" />
+    <Content Include="Images\data\525897-1920x1080.jpg" />
+    <Content Include="Images\data\525959-1920x1080.jpg" />
+    <Content Include="Images\data\526023-1920x1080.jpg" />
+    <Content Include="Images\data\526406-1920x1080.jpg" />
+    <Content Include="Images\data\526442-1920x1080.jpg" />
+    <Content Include="Images\data\526460-1920x1080.jpg" />
+    <Content Include="Images\data\526595-1920x1080.jpg" />
+    <Content Include="Images\data\526609-1920x1080.jpg" />
+    <Content Include="Images\data\526900-1920x1080.jpg" />
+    <Content Include="Images\data\527369-1920x1080.jpg" />
+    <Content Include="Images\data\528243-1920x1080.jpg" />
+    <Content Include="Images\data\529721-1920x1080.jpg" />
+    <Content Include="Images\data\531848-1920x1080.jpg" />
+    <Content Include="Images\data\532118-1920x1080.jpg" />
+    <Content Include="Images\data\532179-1920x1080.jpg" />
+    <Content Include="Images\data\532755-1920x1080.jpg" />
+    <Content Include="Images\data\532887-1920x1080.jpg" />
+    <Content Include="Images\data\533286-1920x1080.jpg" />
+    <Content Include="Images\data\535240-1920x1080.jpg" />
+    <Content Include="Images\data\537285-1920x1080.jpg" />
+    <Content Include="Images\data\537808-1920x1080.jpg" />
+    <Content Include="Images\data\538076-1920x1080.jpg" />
+    <Content Include="Images\data\538197-1920x1080.jpg" />
+    <Content Include="Images\data\538204-1920x1080.jpg" />
+    <Content Include="Images\data\538698-1920x1080.jpg" />
+    <Content Include="Images\data\539500-1920x1080.jpg" />
+    <Content Include="Images\data\540986-1920x1080.jpg" />
+    <Content Include="Images\data\541276-1920x1080.jpg" />
+    <Content Include="Images\data\541508-1920x1080.jpg" />
+    <Content Include="Images\data\541971-1920x1080.jpg" />
+    <Content Include="Images\data\542183-1920x1080.jpg" />
+    <Content Include="Images\data\544403-1920x1080.jpg" />
+    <Content Include="Images\data\545220-1920x1080.jpg" />
+    <Content Include="Images\data\545221-1920x1080.jpg" />
+    <Content Include="Images\data\545228-1920x1080.jpg" />
+    <Content Include="Images\data\545314-1920x1080.jpg" />
+    <Content Include="Images\data\547392-1920x1080.jpg" />
+    <Content Include="Images\data\549414-1920x1080.jpg" />
+    <Content Include="Images\data\550193-1920x1080.jpg" />
+    <Content Include="Images\data\550997-1920x1080.jpg" />
+    <Content Include="Images\data\551202-1920x1080.jpg" />
+    <Content Include="Images\data\551787-1920x1080.jpg" />
+    <Content Include="Images\data\551960-1920x1080.jpg" />
+    <Content Include="Images\data\552506-1920x1080.jpg" />
+    <Content Include="Images\data\552643-1920x1080.jpg" />
+    <Content Include="Images\data\552663-1920x1080.jpg" />
+    <Content Include="Images\data\553063-1920x1080.jpg" />
+    <Content Include="Images\data\553316-1920x1080.jpg" />
+    <Content Include="Images\data\554146-1920x1080.jpg" />
+    <Content Include="Images\data\554502-1920x1080.jpg" />
+    <Content Include="Images\data\554545-1920x1080.jpg" />
+    <Content Include="Images\data\554897-1920x1080.jpg" />
+    <Content Include="Images\data\554899-1920x1080.jpg" />
+    <Content Include="Images\data\555382-1920x1080.jpg" />
+    <Content Include="Images\data\555386-1920x1080.jpg" />
+    <Content Include="Images\data\555673-1920x1080.jpg" />
+    <Content Include="Images\data\556696-1920x1080.jpg" />
+    <Content Include="Images\data\556698-1920x1080.jpg" />
+    <Content Include="Images\data\556789-1920x1080.jpg" />
+    <Content Include="Images\data\557706-1920x1080.jpg" />
+    <Content Include="Images\data\558447-1920x1080.jpg" />
+    <Content Include="Images\data\558964-1920x1080.jpg" />
+    <Content Include="Images\data\559278-1920x1080.jpg" />
+    <Content Include="Images\data\559696-1920x1080.jpg" />
+    <Content Include="Images\data\560039-1920x1080.jpg" />
+    <Content Include="Images\data\560631-1920x1080.jpg" />
+    <Content Include="Images\data\563244-1920x1080.jpg" />
+    <Content Include="Images\data\564155-1920x1080.jpg" />
+    <Content Include="Images\data\565112-1920x1080.jpg" />
+    <Content Include="Images\data\565145-1920x1080.jpg" />
+    <Content Include="Images\data\565704-1920x1080.jpg" />
+    <Content Include="Images\data\565716-1920x1080.jpg" />
+    <Content Include="Images\data\566245-1920x1080.jpg" />
+    <Content Include="Images\data\568016-1920x1080.jpg" />
+    <Content Include="Images\data\568218-1920x1080.jpg" />
+    <Content Include="Images\data\569674-1920x1080.jpg" />
+    <Content Include="Images\data\569944-1920x1080.jpg" />
+    <Content Include="Images\data\570363-1920x1080.jpg" />
+    <Content Include="Images\data\571191-1920x1080.jpg" />
+    <Content Include="Images\data\571215-1920x1080.jpg" />
+    <Content Include="Images\data\572089-1920x1080.jpg" />
+    <Content Include="Images\data\572312-1920x1080.jpg" />
+    <Content Include="Images\data\572654-1920x1080.jpg" />
+    <Content Include="Images\data\572656-1920x1080.jpg" />
+    <Content Include="Images\data\572815-1920x1080.jpg" />
+    <Content Include="Images\data\572832-1920x1080.jpg" />
+    <Content Include="Images\data\574111-1920x1080.jpg" />
+    <Content Include="Images\data\574899-1920x1080.jpg" />
+    <Content Include="Images\data\57954-1920x1080.jpg" />
+    <Content Include="Images\data\580436-1920x1080.jpg" />
+    <Content Include="Images\data\580497-1920x1080.jpg" />
+    <Content Include="Images\data\58059-1920x1080.jpg" />
+    <Content Include="Images\data\58186-1920x1080.jpg" />
+    <Content Include="Images\data\581916-1920x1080.jpg" />
+    <Content Include="Images\data\58414-1920x1080.jpg" />
+    <Content Include="Images\data\58625-1920x1080.jpg" />
+    <Content Include="Images\data\59134-1920x1080.jpg" />
+    <Content Include="Images\data\592268-1920x1080.jpg" />
+    <Content Include="Images\data\59834-1920x1080.jpg" />
+    <Content Include="Images\data\599821-1920x1080.jpg" />
+    <Content Include="Images\data\603170-1920x1080.jpg" />
+    <Content Include="Images\data\615161-1920x1080.jpg" />
+    <Content Include="Images\data\616301-1920x1080.jpg" />
+    <Content Include="Images\data\616306-1920x1080.jpg" />
+    <Content Include="Images\data\61990-1920x1080.jpg" />
+    <Content Include="Images\data\62350-1920x1080.jpg" />
+    <Content Include="Images\data\623737-1920x1080.jpg" />
+    <Content Include="Images\data\623787-1920x1080.jpg" />
+    <Content Include="Images\data\625810-1920x1080.jpg" />
+    <Content Include="Images\data\627062-1920x1080.jpg" />
+    <Content Include="Images\data\630988-1920x1080.jpg" />
+    <Content Include="Images\data\63714-1920x1080.jpg" />
+    <Content Include="Images\data\64118-1920x1080.jpg" />
+    <Content Include="Images\data\64361-1920x1080.jpg" />
+    <Content Include="Images\data\64538-1920x1080.jpg" />
+    <Content Include="Images\data\64690-1920x1080.jpg" />
+    <Content Include="Images\data\64983-1920x1080.jpg" />
+    <Content Include="Images\data\65339-1920x1080.jpg" />
+    <Content Include="Images\data\66014-1920x1080.jpg" />
+    <Content Include="Images\data\66353-1920x1080.jpg" />
+    <Content Include="Images\data\66473-1920x1080.jpg" />
+    <Content Include="Images\data\66642-1920x1080.jpg" />
+    <Content Include="Images\data\66869-1920x1080.jpg" />
+    <Content Include="Images\data\67074-1920x1080.jpg" />
+    <Content Include="Images\data\67311-1920x1080.jpg" />
+    <Content Include="Images\data\67370-1920x1080.jpg" />
+    <Content Include="Images\data\675622-1920x1080.jpg" />
+    <Content Include="Images\data\67821-1920x1080.jpg" />
+    <Content Include="Images\data\68132-1920x1080.jpg" />
+    <Content Include="Images\data\68499-1920x1080.jpg" />
+    <Content Include="Images\data\686668-1920x1080.jpg" />
+    <Content Include="Images\data\687134-1920x1080.jpg" />
+    <Content Include="Images\data\68914-1920x1080.jpg" />
+    <Content Include="Images\data\691351-1920x1080.jpg" />
+    <Content Include="Images\data\693007-1920x1080.jpg" />
+    <Content Include="Images\data\69362-1920x1080.jpg" />
+    <Content Include="Images\data\69605-1920x1080.jpg" />
+    <Content Include="Images\data\70054-1920x1080.jpg" />
+    <Content Include="Images\data\704635-1920x1080.jpg" />
+    <Content Include="Images\data\70834-1920x1080.jpg" />
+    <Content Include="Images\data\70838-1920x1080.jpg" />
+    <Content Include="Images\data\709-1920x1080.jpg" />
+    <Content Include="Images\data\71045-1920x1080.jpg" />
+    <Content Include="Images\data\71837-1920x1080.jpg" />
+    <Content Include="Images\data\719213-1920x1080.jpg" />
+    <Content Include="Images\data\72611-1920x1080.jpg" />
+    <Content Include="Images\data\72816-1920x1080.jpg" />
+    <Content Include="Images\data\73069-1920x1080.jpg" />
+    <Content Include="Images\data\73704-1920x1080.jpg" />
+    <Content Include="Images\data\73804-1920x1080.jpg" />
+    <Content Include="Images\data\74133-1920x1080.jpg" />
+    <Content Include="Images\data\74474-1920x1080.jpg" />
+    <Content Include="Images\data\75105-1920x1080.jpg" />
+    <Content Include="Images\data\76534-1920x1080.jpg" />
+    <Content Include="Images\data\77008-1920x1080.jpg" />
+    <Content Include="Images\data\77378-1920x1080.jpg" />
+    <Content Include="Images\data\78960-1920x1080.jpg" />
+    <Content Include="Images\data\79524-1920x1080.jpg" />
+    <Content Include="Images\data\82614-1920x1080.jpg" />
+    <Content Include="Images\data\84963-1920x1080.jpg" />
+    <Content Include="Images\data\87429-1920x1080.jpg" />
+    <Content Include="Images\data\87597-1920x1080.jpg" />
+    <Content Include="Images\data\87690-1920x1080.jpg" />
+    <Content Include="Images\data\89537-1920x1080.jpg" />
+    <Content Include="Images\data\90272-1920x1080.jpg" />
+    <Content Include="Images\data\90867-1920x1080.jpg" />
+    <Content Include="Images\data\9128-1920x1080.jpg" />
+    <Content Include="Images\data\92021-1920x1080.jpg" />
+    <Content Include="Images\data\92341-1920x1080.jpg" />
+    <Content Include="Images\data\92439-1920x1080.jpg" />
+    <Content Include="Images\data\92669-1920x1080.jpg" />
+    <Content Include="Images\data\92699-1920x1080.jpg" />
+    <Content Include="Images\data\92709-1920x1080.jpg" />
+    <Content Include="Images\data\92822-1920x1080.jpg" />
+    <Content Include="Images\data\93164-1920x1080.jpg" />
+    <Content Include="Images\data\93324-1920x1080.jpg" />
+    <Content Include="Images\data\93373-1920x1080.jpg" />
+    <Content Include="Images\data\93975-1920x1080.jpg" />
+    <Content Include="Images\data\97063-1920x1080.jpg" />
+    <Content Include="Images\data\98339-1920x1080.jpg" />
+    <Content Include="Images\data\98836-1920x1080.jpg" />
+    <Content Include="Images\data\98837-1920x1080.jpg" />
+    <Content Include="Images\data\99162-1920x1080.jpg" />
+    <Content Include="Images\data\99379-1920x1080.jpg" />
+    <Content Include="Images\data\autumn-park-landscape-lake-2724.jpg" />
+    <Content Include="Images\data\autumn-park-night-lights-fall.jpg" />
+    <Content Include="Images\data\avstraliya-utro-rassvet-reka.jpg" />
+    <Content Include="Images\data\below-the-rainbow-raduga-skaly.jpg" />
+    <Content Include="Images\data\bereg-priboy-skaly.jpg" />
+    <Content Include="Images\data\derevya-sosna-doroga-trava.jpg" />
+    <Content Include="Images\data\doroga-derevo-osen-tuman.jpg" />
+    <Content Include="Images\data\doroga-derevo-zima-noch-peyzazh.jpg" />
+    <Content Include="Images\data\doroga-gora-peyzazh-5956.jpg" />
+    <Content Include="Images\data\doroga-gory-peyzazh-5678.jpg" />
+    <Content Include="Images\data\gandex.ru-20989_ed7be75c5dcc6300b0a6b81cc8f32501.jpg" />
+    <Content Include="Images\data\golden-hour-bereg-more-zakat.jpg" />
+    <Content Include="Images\data\gora-chelovek-tuman-solnce.jpg" />
+    <Content Include="Images\data\gora-matterhorn-shveycariya-2163.jpg" />
+    <Content Include="Images\data\gory-bereg-oblaka.jpg" />
+    <Content Include="Images\data\gory-dolina-peyzazh.jpg" />
+    <Content Include="Images\data\gory-nebo-peyzazh-1256.jpg" />
+    <Content Include="Images\data\groza-molnii-tuchi-nebo-vecher.jpg" />
+    <Content Include="Images\data\holmy-angliya-britaniya-nebo.jpg" />
+    <Content Include="Images\data\kareliya-kizhi-lodka.jpg" />
+    <Content Include="Images\data\more-bereg-zakat-trava-solnce.jpg" />
+    <Content Include="Images\data\more-ostrov-kamni-utro-rassvet.jpg" />
+    <Content Include="Images\data\more-plyazh-gorizont-solnce.jpg" />
+    <Content Include="Images\data\more-plyazh-mayak-zakat.jpg" />
+    <Content Include="Images\data\more-plyazh-pesok-kamni-palmy.jpg" />
+    <Content Include="Images\data\nature-forest-park-trees-2556.jpg" />
+    <Content Include="Images\data\nebo-oblaka-more-bereg-domik.jpg" />
+    <Content Include="Images\data\nebo-oblaka-tuchi-zakat-zarevo-2173.jpg" />
+    <Content Include="Images\data\nebo-oblaka-zakat-more-shtorm.jpg" />
+    <Content Include="Images\data\pole-kolosya-tuchi-oblaka.jpg" />
+    <Content Include="Images\data\polyana-derevya-cvety-romashki.jpg" />
+    <Content Include="Images\data\priroda-derevya-topolya-osen.jpg" />
+    <Content Include="Images\data\priroda-nebo-goluboe-derevya.jpg" />
+    <Content Include="Images\data\priroda-noch-holmy-derevya.jpg" />
+    <Content Include="Images\data\priroda-zima-peyzazh-pole.jpg" />
+    <Content Include="Images\data\ssha-shtat-arizona-sekond-mesa.jpg" />
+    <Content Include="Images\data\stokksnes-islandiya-chernyy.jpg" />
+    <Content Include="Images\data\torrey-pines-broken-hill.jpg" />
+    <Content Include="Images\data\u-tro-pole-derevo-peyzazh-svet.jpg" />
+    <Content Include="Images\data\united-kingdom-england-347.jpg" />
+    <Content Include="Images\data\zakat-derevo-zhenschina.jpg" />
+    <Content Include="Images\data\zakat-nebo-oblaka-solnce-luchi-3558.jpg" />
+    <Content Include="Images\data\zakat-zima-peyzazh.jpg" />
+    <Content Include="Images\data\zima-derevya-sneg-tuman.jpg" />
+    <Content Include="Images\data\zima-dom-zakat-peyzazh.jpg" />
+    <Content Include="Images\data\zima-elki-domik-sklon-solnce.jpg" />
+    <Content Include="Scripts\bootstrap\bootstrap.datepicker.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.fileupload.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.timepicker.js" />
+    <Content Include="Scripts\custom\client.js" />
+    <Content Include="Scripts\custom\site.js" />
+    <Content Include="Scripts\google\api.js" />
+    <Content Include="Scripts\google\oms.min.js" />
+    <Content Include="Scripts\html5\html5.js" />
+    <Content Include="Scripts\jquery\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery\jquery.chosen.js" />
+    <Content Include="Scripts\jquery\jquery.chosen.min.js" />
+    <Content Include="Scripts\jquery\jquery.cookie.js" />
+    <Content Include="Scripts\jquery\jquery.cookie.min.js" />
+    <Content Include="Scripts\jquery\jquery.filetree.js" />
+    <Content Include="Scripts\jquery\jquery.flot.axislabels.js" />
+    <Content Include="Scripts\jquery\jquery.flot.min.js" />
+    <Content Include="Scripts\jquery\jquery.signalR-2.1.1.js" />
+    <Content Include="Scripts\jquery\jquery.signalR-2.1.1.min.js" />
+    <Content Include="Scripts\jquery\jquery.tmpl.js" />
+    <Content Include="Scripts\jquery\jquery.tmpl.min.js" />
+    <Content Include="Scripts\uikit\addons\autocomplete.js" />
+    <Content Include="Scripts\uikit\addons\autocomplete.min.js" />
+    <Content Include="Scripts\uikit\addons\datepicker.js" />
+    <Content Include="Scripts\uikit\addons\datepicker.min.js" />
+    <Content Include="Scripts\uikit\addons\form-password.js" />
+    <Content Include="Scripts\uikit\addons\form-password.min.js" />
+    <Content Include="Scripts\uikit\addons\form-select.js" />
+    <Content Include="Scripts\uikit\addons\form-select.min.js" />
+    <Content Include="Scripts\uikit\addons\htmleditor.js" />
+    <Content Include="Scripts\uikit\addons\htmleditor.min.js" />
+    <Content Include="Scripts\uikit\addons\nestable.js" />
+    <Content Include="Scripts\uikit\addons\nestable.min.js" />
+    <Content Include="Scripts\uikit\addons\notify.js" />
+    <Content Include="Scripts\uikit\addons\notify.min.js" />
+    <Content Include="Scripts\uikit\addons\pagination.js" />
+    <Content Include="Scripts\uikit\addons\pagination.min.js" />
+    <Content Include="Scripts\uikit\addons\search.js" />
+    <Content Include="Scripts\uikit\addons\search.min.js" />
+    <Content Include="Scripts\uikit\addons\sortable.js" />
+    <Content Include="Scripts\uikit\addons\sortable.min.js" />
+    <Content Include="Scripts\uikit\addons\sticky.js" />
+    <Content Include="Scripts\uikit\addons\sticky.min.js" />
+    <Content Include="Scripts\uikit\addons\timepicker.js" />
+    <Content Include="Scripts\uikit\addons\timepicker.min.js" />
+    <Content Include="Scripts\uikit\addons\upload.js" />
+    <Content Include="Scripts\uikit\addons\upload.min.js" />
+    <Content Include="Scripts\uikit\uikit.js" />
+    <Content Include="Scripts\uikit\uikit.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Image\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gallery.Core.Contracts\Gallery.Core.Contracts.csproj">
+      <Project>{AE6319E1-CF12-43C4-BA87-FAC58A3EA789}</Project>
+      <Name>Gallery.Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gallery.Core.Domain\Gallery.Core.Domain.csproj">
+      <Project>{78a42fbf-c56e-4783-b8ef-5040364db29e}</Project>
+      <Name>Gallery.Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gallery.Helpers\Gallery.Helpers.csproj">
+      <Project>{B0BEEFFF-0448-400C-8680-4D5A5E18FE9F}</Project>
+      <Name>Gallery.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gallery.ServiceContracts\Gallery.ServiceContracts.csproj">
+      <Project>{E841CC16-B9A2-4C25-8C77-36A69EE58BF5}</Project>
+      <Name>Gallery.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gallery.Service\Gallery.Service.csproj">
+      <Project>{319FC80E-0D70-4880-A2FC-70686C8ECDB6}</Project>
+      <Name>Gallery.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gallery.Core\Gallery.Core.csproj">
+      <Project>{8b32e15b-fe10-4c3a-8e83-676a53a23663}</Project>
+      <Name>Gallery.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Image\Images.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Image\ImageListPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_ImageLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_UIKitFlash.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Flash.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\uikit\addons\datepicker.min.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\AccessDenied.cshtml" />
+    <Content Include="Views\Error\CommonError.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49736</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58304/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
